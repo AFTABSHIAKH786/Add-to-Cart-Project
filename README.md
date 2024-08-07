@@ -3,6 +3,9 @@
 This project is a React application that implements a basic e-commerce cart system. Users can view a list of products, add them to their cart, view the cart, and manage cart items (e.g., adjusting quantities, removing items).
 ![image](https://github.com/user-attachments/assets/90d07b97-d489-4399-a14f-a87100379a0c)
 
+![image](https://github.com/user-attachments/assets/033faf8d-bd48-4342-a3d5-120aaad522f0)
+
+
 
 ## Features
 
