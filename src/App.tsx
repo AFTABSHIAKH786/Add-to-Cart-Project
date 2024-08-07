@@ -4,9 +4,11 @@ import Cart from "./components/Cart";
 import Products from "./components/Products";
 import Navbar from "./components/Navbar";
 import {products} from "./assets/ProductDetails"
+import { CartProvider } from "./assets/CartContext";
 function App() {
 
   return (
+    <CartProvider>
     <div className="app">
       <h1>ADD TO CART SYSTEM 🛒</h1>
       <BrowserRouter>
@@ -23,6 +25,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+    </CartProvider>
   );
 }
 

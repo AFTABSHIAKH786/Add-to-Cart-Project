@@ -1,22 +1,18 @@
-// src/ProductDisplay.tsx
-import React, { useState } from 'react';
-
-import { Product } from '../assets/ProductDetails';
-import { useNavigate } from 'react-router-dom';
+import { Product } from "../assets/ProductDetails";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../assets/CartContext";
 
 interface ProductDisplayProps {
   product: Product;
 }
 
-
 const Products: React.FC<ProductDisplayProps> = ({ product }) => {
-  const [cart, setCart] = useState<Product[]>([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
 
-  const addToCart = (product: Product) => {
-    setCart([...cart, product]);
-    alert(`${product.name} added to cart!`);
-    navigate('/cart'); // navigate to cart page after adding to cart. You may want to replace this with a more appropriate route based on your application's structure.
+  const handleAddToCart = () => {
+    addToCart(product);
+    navigate("/cart");
   };
 
   return (
@@ -25,7 +21,7 @@ const Products: React.FC<ProductDisplayProps> = ({ product }) => {
       <h2 className="product-name">{product.name}</h2>
       <p className="product-description">{product.description}</p>
       <p className="product-price">${product.price.toFixed(2)}</p>
-      <button onClick={() => addToCart(product)} className="add-to-cart-button">
+      <button onClick={handleAddToCart} className="add-to-cart-button">
         Add to Cart
       </button>
     </div>
